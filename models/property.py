@@ -20,6 +20,10 @@ class Property(models.Model):
     garden_area = fields.Integer()
     garden_orientation = fields.Selection([('north', 'North'), ('south', 'South'), ('east', "East"), ('west', 'West')])
 
+    salesperson = fields.Many2one('res.users', string='Salesperson', index=True, tracking=True, default=lambda self: self.env.user)
+    buyer = fields.Many2one('res.partner', copy=False, string="Buyer")
+    property_type = fields.Many2one('estate.property.type', string="Property Type")
+
     active = fields.Boolean(default=True)
     state  = fields.Selection([
         ('new', 'New'),
