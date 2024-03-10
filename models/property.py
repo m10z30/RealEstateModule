@@ -24,6 +24,7 @@ class Property(models.Model):
     buyer = fields.Many2one('res.partner', copy=False, string="Buyer")
     property_type = fields.Many2one('estate.property.type', string="Property Type")
     tag_ids = fields.Many2many('estate.property.tag')
+    offer_ids = fields.One2many('estate.property.offer', 'property_id')
 
     active = fields.Boolean(default=True)
     state  = fields.Selection([
