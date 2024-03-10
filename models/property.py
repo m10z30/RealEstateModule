@@ -55,3 +55,11 @@ class Property(models.Model):
             record.best_price = best_price
         
 
+    @api.onchange('garden')
+    def _onchange_garden(self):
+        if self.garden:
+            self.garden_area = 10
+            self.garden_orientation = "north"
+        else:
+            self.garden_area = 0
+            self.garden_orientation = ""
