@@ -9,8 +9,8 @@
     <menuitem id="estate_menu_root" name="Estate">
         <menuitem id="estate_settings_menu" name="Settings">
             <menuitem id="estate_property_type_model_menu_action" action="estate_property_type_model_action"/>
+            <menuitem id="estate_property_tag_model_menu_action" action="estate_property_tag_model_action"/>
         </menuitem>
     </menuitem>
-
     
 </odoo>
